@@ -1,6 +1,6 @@
 print("hello")
 #sting
-y="Rizwan"
+y="Rizwan Danish"
 print(y)
 
 
