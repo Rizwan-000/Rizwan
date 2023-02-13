@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<!-- Created By -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background: #f2f2f2;
+}
+nav{
+  background: grey;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 100px;
+}
+nav .logo{
+  color: orange;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+nav .nav-items{
+  display: flex;
+  flex: 1;
+  padding: 0 0 0 40px;
+}
+nav .nav-items li{
+  list-style: none;
+  padding: 0 15px;
+}
+nav .nav-items li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav .nav-items li a:hover{
+  color: black;
+}
+nav form{
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: #1e232b;
+  min-width: 18%!important;
+  border-radius: 2px;
+  border: 1px solid rgba(155,155,155,0.2);
+}
+nav form .search-data{
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+nav form button{
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background: #ff3d00;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+nav form button:hover{
+  background: #e63600;
+}
+nav .menu-icon,
+nav .cancel-icon,
+nav .search-icon{
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+nav .menu-icon span,
+nav .cancel-icon,
+nav .search-icon{
+  display: none;
+}
+@media (max-width: 1245px) {
+  nav{
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1140px){
+  nav{
+    padding: 0px;
+  }
+  nav .logo{
+    flex: 2;
+    text-align: center;
+  }
+  nav .nav-items{
+    position: fixed;
+    z-index: 99;
+    top: 70px;
+    width: 100%;
+    left: -100%;
+    height: 100%;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    background: #14181f;
+    display: inline-block;
+    transition: left 0.3s ease;
+  }
+  nav .nav-items.active{
+    left: 0px;
+  }
+  nav .nav-items li{
+    line-height: 40px;
+    margin: 30px 0;
+  }
+  nav .nav-items li a{
+    font-size: 20px;
+  }
+  nav form{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+  nav form.active{
+    top: 95px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav form:before{
+    position: absolute;
+    content: "";
+    top: -13px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border: 10px solid transparent;
+    border-bottom-color: #1e232b;
+    margin: -20px 0 0;
+  }
+  nav form:after{
+    position: absolute;
+    content: '';
+    height: 60px;
+    padding: 2px;
+    background: #1e232b;
+    border-radius: 2px;
+    min-width: calc(100% + 20px);
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  nav .menu-icon{
+    display: block;
+  }
+  nav .search-icon,
+  nav .menu-icon span{
+    display: block;
+  }
+  nav .menu-icon span.hide,
+  nav .search-icon.hide{
+    display: none;
+  }
+  nav .cancel-icon.show{
+    display: block;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.content header{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .text{
+  font-size: 30px;
+  font-weight: 700;
+}
+.space{
+  margin: 10px 0;
+}
+nav .logo.space{
+  color: red;
+  padding: 0 5px 0 0;
+}
+@media (max-width: 980px){
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon{
+    margin: 0 20px;
+  }
+  nav form{
+    right: 30px;
+  }
+}
+@media (max-width: 350px){
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon{
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content header{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .text{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .space{
+  marg
+}
+
+<!-- Created by body -->
+
+
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 20rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+.container .products-container .product:hover h3{
+   color:black;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+.products-preview{
+   position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   display: none;
+   padding:2rem;
+   text-align: center;
+   background: #fff;
+   position: relative;
+   margin:2rem;
+   width: 40rem;
+}
+
+.products-preview .preview.active{
+   display: inline-block;
+}
+
+.products-preview .preview img{
+   height: 30rem;
+}
+
+.products-preview .preview .fa-times{
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+   transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+   color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+   padding:1rem 0;
+   font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+   color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+   color:#999;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 1.6rem;
+   color:#777;
+}
+
+.products-preview .preview .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+   display: flex;
+   gap:1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+   flex:1 1 16rem;
+   padding:1rem;
+   font-size: 1.8rem;
+   color:#444;
+   border:.1rem solid #444;
+}
+
+.products-preview .preview .buttons a.cart{
+   background: #444;
+   color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+   background: #111;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+   background: #444;
+   color:#fff;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+   line-height: 1.5;
+   font-family: 'Poppins', sans-serif;
+}
+
+
+.container {
+   max-width: 1170px;
+   margin: auto;
+}
+
+.row{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+ul{
+   list-style: none;
+}
+
+.contact {
+   background: rgb(46, 44, 44);
+   padding: 70px 0;
+
+}
+
+.contact-col {
+   width: 25%;
+   padding: 0 15px;
+}
+
+.contact-col h4{
+   font-size: 18px;
+   color: white;
+   text-transform: capitalize;
+   margin-bottom: 30px;
+   font-weight: 500;
+   position: relative;
+   
+
+}
+
+.contact-col h4::before{
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 2px;
+   background-color: silver;
+   height: 2px;
+   box-sizing: border-box;
+   width: 70px;
+}
+
+.contact-col ul li:not(:last-child){
+   margin-bottom: 10px;
+}
+
+.contact-col ul li a{
+   font-size: 16px;
+   text-transform: capitalize;
+   color: #ffffff;
+   text-decoration: none;
+   font-weight: 300;
+   color: #bbbbbb;
+   display: block;
+   transition: all 0.3s ease;
+
+}
+
+.contact-col ul li a:hover{
+   color: #ffffff;
+   padding: 8px;
+}
+
+.contact-col .social-links a {
+   display: inline-block;
+   height: 40px;
+   width: 40px;
+   background-color: rgba(255,2555,2555,0.2);
+   margin-right: 10px;
+   margin: 0 20px 20px 0;
+   text-align: center;
+   line-height: 40px;
+   border-radius: 50%;
+   color: #ffffff;
+   transition: all 0.5s ease;
+}
+
+.contact-col .social-links a:hover{
+   color: #27ae60;
+   background-color: #eee;
+}
+
+@media(max-width:767px){
+   .contact-col {
+      width: 50%;
+      padding: 0 15px;
+      margin-bottom: 30px;
+   }
+}
+  
+@media(max-width:574px){
+   .contact-col {
+      width: 100%;
+   }
+}
+  
+
+
+
+
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      height: 25rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
+
+
+</style>
+  
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Responsive Navbar with Search Box | CodingNepal</title> -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  </head>
+  <body>
+    <nav>
+      <div class="menu-icon">
+<span class="fas fa-bars"></span></div>
+<div class="logo">Etsy</div>
+<div class="nav-items">
+<li><a href="#home"><class="active"></i>Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">products</a></li>
+<li><a href="#">Contact-Us</a></li>
+<li><a href="#">Feedback</a></li>
+</div>
+<div class="search-icon">
+<span class="fas fa-search"></span></div>
+<div class="cancel-icon">
+<span class="fas fa-times"></span></div>
+<form action="#">
+        <input type="search" class="search-data" placeholder="Search" required>
+        <button type="submit" class="fa fa-search"></button>
+      </form>
+</nav>
+    <div class="content">
+      <header class="space"></header>
+      <div class="space text"></div>
+</div>
+<div class="background-color-block wt-viewport-width-full wt-position-absolute wt-bg-turquoise-tint"></div>
+<h1 class="wt-body-max-width wt-text-heading-01"> Find things you'll love. Support independent sellers. Only on Etsy. </h1>
+
+<section class="home" id="home">  
+<div class="container">
+
+  <div class="products-container">
+
+      <div class="product" data-name="p-1">
+         <img src="il_794xN.4033778223_sp6a.jpg" alt="">
+         <h3>Bags</h3>
+         <div class="price">1500 PKR</div>
+      </div>
+
+      <div class="product" data-name="p-2">
+         <img src="image4.jpg" alt="">
+         <h3>Gifts for MEN</h3>
+         <div class="price">2000 PKR</div>
+      </div>
+
+      <div class="product" data-name="p-3">
+         <img src="personalGifts.jpg" alt="">
+         <h3>Personal Gifts</h3>
+         <div class="price">1700 PKR</div>
+      </div>
+
+      <div class="product" data-name="p-4">
+         <img src="earrings.jpg" alt="">
+         <h3>Ear_rings</h3>
+         <div class="price">3500 PKR</div>
+      </div>
+
+   </div>
+
+</div>
+
+<div class="products-preview">
+
+   <div class="preview" data-target="p-1">
+      <i class="fas fa-times"></i>
+      <img src="il_794xN.4033778223_sp6a.jpg" alt="">
+      <h3>Bags</h3>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+         <span>( 25000 reviews )</span>
+      </div>
+      <p></p>
+      <div class="price">1500 PKR</div>
+      <div class="buttons">
+         <a href="#" class="buy">buy now</a>
+         <a href="#" class="cart">add to cart</a>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-2">
+      <i class="fas fa-times"></i>
+      <img src="image4.jpg" alt="">
+      <h3>gifts for men</h3>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+         <span>( 25,00 reviews )</span>
+      </div>
+      <p></p>
+      <div class="price">1900 PKR</div>
+      <div class="buttons">
+         <a href="#" class="buy">buy now</a>
+         <a href="#" class="cart">add to cart</a>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-4">
+      <i class="fas fa-times"></i>
+      <img src="personalGifts.jpg" alt="">
+      <h3>personalGifts</h3>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+         <span>( 189007 reviews )</span>
+      </div>
+      <p></p>
+      <div class="price">8,999 PKR</div>
+      <div class="buttons">
+         <a href="#" class="buy">buy now</a>
+         <a href="#" class="cart">add to cart</a>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-6">
+      <i class="fas fa-times"></i>
+      <img src="earrings.jpg" alt="">
+      <h3>Ear_rings</h3>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+         <span>( 2,34,500reviews)</span>
+      </div>
+      <p> </p>
+      <div class="price">8500 PKR</div>
+      <div class="buttons">
+         <a href="#" class="buy">buy now</a>
+         <a href="#" class="cart">add to cart</a>
+      </div>
+   </div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+   <div class="container">
+      <div class="row">
+         <div class="contact-col">
+            <h4>Company</h4>
+            <ul>
+               <li><a href="#">about us</a></li>
+               <li><a href="#">our services</a></li>
+               <li><a href="#">privacy policy</a></li>
+               <li><a href="#">affiliate program</a></li>
+           </ul>
+
+         </div>
+         <div class="contact-col">
+            <h4>Get help</h4>
+            <ul>
+               <li><a href="#">FAQ</a></li>
+               <li><a href="#">shipping</a></li>
+               <li><a href="#">returns</a></li>
+               <li><a href="#">orders</a></li>
+               <li><a href="#">payment options</a></li>
+            </ul>
+      </div>
+      <div class="contact-col">
+         <h4>Stock</h4>
+         <ul>
+            <li><a href="#">Clothes</a></li>
+            <li><a href="#">Jewelry</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Makeup</a></li>
+            <li><a href="#">gifts-cards</a></li>
+         </ul>
+   </div>
+   <div class="contact-col">
+      <h4>Conact us</h4>
+      <div class="social-links">
+         <a href="#"><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="#"><i class="fab fa-instagram"></i></a>
+         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         <a href="#"><i class="fab fa-whatsapp"></i></a> 
+      </div>
+   </div>
+</section>
+
+
+</body>
+</html>
+
+	  
+
+  </body>
+</html>
